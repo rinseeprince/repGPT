@@ -6,7 +6,12 @@ from openai import OpenAI
 app = Flask(__name__)
 
 # CORS configuration for frontend
-CORS(app, resources={r"/api/*": {"origins": ["http://localhost:5173", "https://rep-gpt-ie1b.vercel.app"]}}, supports_credentials=True)
+from flask_cors import CORS
+
+CORS(app, resources={r"/api/*": {"origins": [
+    "http://localhost:5173", 
+    "https://rep-gpt-ie1b.vercel.app"
+]}}, supports_credentials=True)
 
 
 
